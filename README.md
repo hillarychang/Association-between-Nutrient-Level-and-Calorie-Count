@@ -30,6 +30,7 @@ extremely high calories
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 <iframe src="assets/calorie_above.html" width=800 height=600 frameBorder=0></iframe>
+
 <iframe src="assets/calorie_above.html" width=800 height=600 frameBorder=0></iframe>
 Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one univariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
 
@@ -68,7 +69,5 @@ Conclusion: With a p-value of 0.0 for each permutation test for each nutrient le
 
 
 Embed a visualization related to your hypothesis test in your website.
-
-Tip: When making writing your conclusions to the statistical tests in this project, never use language that implies an absolute conclusion; since we are performing statistical tests and not randomized controlled trials, we cannot prove that either hypothesis is 100% true or false.
 
 ---
