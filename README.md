@@ -49,6 +49,7 @@ This plot shows that the distribution of recipes with a calorie count from 0 to 
 Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
 
 Embed at least one grouped table or pivot table in your website and explain its significance.
+pivot_table_recipe_type.sort_values(by='calories', ascending=False).to_markdown(index=False)
 
 ---
 ## Assessment of Missingness
