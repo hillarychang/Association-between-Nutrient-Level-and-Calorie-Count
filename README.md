@@ -40,7 +40,6 @@ Include a 1-2 sentence explanation about your plot, making sure to describe and 
 Embed at least one grouped table or pivot table in your website and explain its significance.
 
 ---
-
 ## Assessment of Missingness
 
 Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
@@ -50,23 +49,29 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 ```
 
 ---
-
 ## Hypothesis Testing
-Hypothesis Test Question: Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
+### Hypothesis Test Question: 
+Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
 
-Null Hypothesis: The nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes.
+### Null Hypothesis: 
+The nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes.
 
-Alternative Hypothesis: There is an association between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) and calorie count in recipes.
+### Alternative Hypothesis: 
+There is an association between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) and calorie count in recipes.
 
-Choice of Test Statistic: I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the calorie content for high nutrient levels (nutrient level above mean nutrient level) and low nutrient levels (nutrient level equal to or below mean nutrient level).
+### Choice of Test Statistic: 
+I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the calorie content for high nutrient levels (nutrient level above mean nutrient level) and low nutrient levels (nutrient level equal to or below mean nutrient level).
 
-Significance Level: I have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
+### Significance Level: 
+I have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
 
-Resulting p-value: The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
+### Resulting p-value: 
+The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
 
-Conclusion: With a p-value of 0.0 for each permutation test for each nutrient level (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs), I have rejected the null hypothesis that the nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes. This p-value suggests that there is an association between nutrient levels (total_fat, sugar, sodium, protein, saturated_fat, carbs) and calorie content for the recipes.
+### Conclusion: 
+With a p-value of 0.0 for each permutation test for each nutrient level (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs), I have rejected the null hypothesis that the nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes. This p-value suggests that there is an association between nutrient levels (total_fat, sugar, sodium, protein, saturated_fat, carbs) and calorie content for the recipes.
 
 
-Embed a visualization related to your hypothesis test in your website.
+DESCRIPTION: Embed a visualization related to your hypothesis test in your website.
 
 ---
