@@ -8,27 +8,26 @@ Our dataset is curated from food.com and contains recipes and reviews. The data 
 
 ## Cleaning and EDA
 
-# Merge Two Dataframes
+### Merge Two Dataframes
 In our exploration of the data, we first merged the Recipes and Ratings datasets using a left merge on the recipe's ID. This ensures that all recipes from the Recipes dataset are retained.
 
-# Fill 0's with NaN Value
+### Fill 0's with NaN Value
 We also filled all ratings of 0 in the merged dataset with np.nan because the presence of 0's affect the mean of a column in the dataset, and we wanted to preserve an accurate mean. 
 
-# Add Average Rating Column
+### Add Average Rating Column
 Afterwards, we computed the average rating per recipe by grouping the dataset by recipe ID and calculating the mean of the ratings for each group.
 
-# Convert Nutrition Column to List and Assign Individual Columns
+### Convert Nutrition Column to List and Assign Individual Columns
 the was a string so we had to convert the 
 
-# Remove duplicate recipe entries 
+### Remove duplicate recipe entries 
 (there are duplicate recipes with different reviews)
 
-# Look at outliers 
+### Look at outliers 
 extremely high calories
 
-
-
-Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
+### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
+Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
 <iframe src="assets/10-80-enrollment.html" width=800 height=600 frameBorder=0></iframe>
 Embed at least one plotly plot you created in your notebook that displays the distribution of a single column (see Part 2: Report for instructions). Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one univariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
