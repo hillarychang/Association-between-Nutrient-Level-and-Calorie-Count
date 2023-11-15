@@ -34,31 +34,20 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 
 ## Hypothesis Testing
 
-Hypothesis Test Question: 
+Hypothesis Test Question: Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
 
-Is there a significant difference in calorie content between recipes with nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) above their respective mean thresholds and recipes with nutrient levels below their mean thresholds?
+Null Hypothesis: The nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes.
 
-Null Hypothesis: The nutrient level (for calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) has an association with calorie count in recipes.
+Alternative Hypothesis: There is an association between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) and calorie count in recipes.
 
-The calorie content of recipes with nutrient levels above their mean thresholds is not significantly different from the calorie content of recipes with nutrient levels below their mean thresholds.
+Choice of Test Statistic: I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the calorie content for high nutrient levels (nutrient level above mean nutrient level) and low nutrient levels (nutrient level equal to or below mean nutrient level).
 
-Alternative Hypothesis: The nutrient level (for calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) does not have an association with calorie count in recipes.
-
-The calorie content of recipes with nutrient levels above their mean thresholds is significantly lower than the calorie content of recipes with nutrient levels below their mean thresholds.
-
-Choice of Test Statistic: I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the average calorie content.
-
-Significance Level: I have chosen significance level of 0.05 for this analysis. A significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
+Significance Level: I have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
 
 Resulting p-value: The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
 
-Conclusion: With a p-value of 0.0, I have rejected the null hypothesis. This p-value suggests that there is a significant difference in calorie content between recipes with nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) above their respective mean thresholds and recipes with nutrient levels below those thresholds. This implies that recipes with higher nutrient levels tend to have significantly lower calorie content compared to recipes with lower nutrient levels. This finding could be valuable for individuals seeking recipes with specific nutritional characteristics while managing calorie intake.
+Conclusion: With a p-value of 0.0 for a permutation test for each nutrient level (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs), I have rejected the null hypothesis that the nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes. This p-value suggests that there is an association between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) and calorie content for the recipes.
 
-
-
-Clearly state your null and alternative hypotheses, your choice of test statistic and significance level, the resulting 
-p
--value, and your conclusion. Justify why these choices are good choices for answering the question you are trying to answer.
 
 Embed a visualization related to your hypothesis test in your website.
 
