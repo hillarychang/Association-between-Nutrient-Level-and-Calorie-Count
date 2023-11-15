@@ -3,7 +3,7 @@ by Hillary Chang (hic001@ucsd.edu)
 
 ## Introduction
 
-In this project, we studied the effectiveness of spice challenges in building team morale.
+In this project, we studied the which n of spice challenges in building team morale.
 Provide an introduction to your dataset, and clearly state the one question your analysis is centered around. Why should readers of your website care about the dataset and your question specifically? Report the number of rows in the dataset, the names of the columns that are relevant to your question, and descriptions of those relevant columns.
 
 ---
@@ -33,6 +33,22 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 ---
 
 ## Hypothesis Testing
+
+Hypothesis Test Question: Is there a significant difference in calorie content between recipes with nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) above their respective mean thresholds and recipes with nutrient levels below their mean thresholds?
+
+Null Hypothesis: The calorie content of recipes with nutrient levels above their mean thresholds is not significantly different from the calorie content of recipes with nutrient levels below their mean thresholds.
+
+Alternative Hypothesis: The calorie content of recipes with nutrient levels above their mean thresholds is significantly lower than the calorie content of recipes with nutrient levels below their mean thresholds.
+
+Choice of Test Statistic: I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the average calorie content.
+
+Significance Level: I have chosen significance level of 0.05 for this analysis. A significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
+
+Resulting p-value: The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
+
+Conclusion: With a p-value of 0.0, I have rejected the null hypothesis. This p-value suggests that there is a significant difference in calorie content between recipes with nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) above their respective mean thresholds and recipes with nutrient levels below those thresholds. This implies that recipes with higher nutrient levels tend to have significantly lower calorie content compared to recipes with lower nutrient levels. This finding could be valuable for individuals seeking recipes with specific nutritional characteristics while managing calorie intake.
+
+
 
 Clearly state your null and alternative hypotheses, your choice of test statistic and significance level, the resulting 
 p
