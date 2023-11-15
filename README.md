@@ -39,15 +39,14 @@ This plot shows that the distribution of recipes with a calorie count from 2000 
 
 ## Bivariate Analysis
 In the bivariate analysis, we analyzed the distribution of calorie count in the recipes with the protein count. Because there were several recipes with extremely high calorie counts, we split the analysis into two graphs and created a distribution for recipes with calories greater than the recommended calorie intake of 2000 and a second one for recipes with calories less than or equal to the recommended calorie intake of 2000 to remove the outliers for each distribution.
-<iframe src="assets/fig3.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/bivariate" width=800 height=600 frameBorder=0></iframe>
 This plot shows that the distribution of recipes with a calorie count from 0 to 2000 could be approximated as a right skewed gaussian distribution. The graph is centered around 200, meaning that most recipes below the recommended calorie intake of 2000 calories have around 200 calories.
 
-<iframe src="assets/fig4.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/bivariate_above" width=800 height=600 frameBorder=0></iframe>
 This plot shows that the distribution of recipes with a calorie count from 0 to 2000 could be approximated as a right skewed gaussian distribution. The graph is centered around 200, meaning that most recipes below the recommended calorie intake of 2000 calories have around 200 calories.
 
 ## Interesting Aggregates
 Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
-
 
 Embed at least one grouped table or pivot table in your website and explain its significance.
 
@@ -85,6 +84,7 @@ I have chosen a significance level of 0.05 for this analysis. This is because a 
 
 
 ### Permutation Testing
+<iframe src="assets/protein-calorie" width=800 height=600 frameBorder=0></iframe>
 
 
 ### Conclusion: 
