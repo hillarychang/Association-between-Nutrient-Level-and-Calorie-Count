@@ -34,11 +34,17 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 
 ## Hypothesis Testing
 
-Hypothesis Test Question: Is there a significant difference in calorie content between recipes with nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) above their respective mean thresholds and recipes with nutrient levels below their mean thresholds?
+Hypothesis Test Question: 
 
-Null Hypothesis: The calorie content of recipes with nutrient levels above their mean thresholds is not significantly different from the calorie content of recipes with nutrient levels below their mean thresholds.
+Is there a significant difference in calorie content between recipes with nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, carbs) above their respective mean thresholds and recipes with nutrient levels below their mean thresholds?
 
-Alternative Hypothesis: The calorie content of recipes with nutrient levels above their mean thresholds is significantly lower than the calorie content of recipes with nutrient levels below their mean thresholds.
+Null Hypothesis: The nutrient level (for calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) has an association with calorie count in recipes.
+
+The calorie content of recipes with nutrient levels above their mean thresholds is not significantly different from the calorie content of recipes with nutrient levels below their mean thresholds.
+
+Alternative Hypothesis: The nutrient level (for calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) does not have an association with calorie count in recipes.
+
+The calorie content of recipes with nutrient levels above their mean thresholds is significantly lower than the calorie content of recipes with nutrient levels below their mean thresholds.
 
 Choice of Test Statistic: I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the average calorie content.
 
