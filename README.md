@@ -27,18 +27,6 @@ the was a string so we had to convert the
 extremely high calories
 
 
-### **Transformations for Analysis:**
-To enhance our analytical endeavors, we've taken steps to ensure data quality. We've addressed ratings of 0 by replacing them with NaN, recognizing that zero ratings might not accurately reflect the sentiment of the users. This meticulous curation sets the stage for a more meaningful exploration of average ratings per recipe.
-
-
-
-
-
-Provide an introduction to your dataset, and clearly state the one question your analysis is centered around. Why should readers of your website care about the dataset and your question specifically? Report the number of rows in the dataset, the names of the columns that are relevant to your question, and descriptions of those relevant columns.
-
----
-
-## Data Cleaning and EDA
 
 Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
@@ -63,7 +51,6 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 ---
 
 ## Hypothesis Testing
-
 Hypothesis Test Question: Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
 
 Null Hypothesis: The nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes.
