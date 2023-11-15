@@ -5,7 +5,7 @@ In an era where mindful eating and wellness are in the spotlight, there's a grow
 
 Our dataset is curated from food.com and contains recipes and reviews. The data is separated into two datasets, the recipes dataset and ratings dataset. The recipes dataset contains columns like name, id, minutes, contributor_id, submitted tags, nutrition, n_steps, steps, description, ingredients, n_ingredients, representing the recipe name, recipe ID, the amount of recipes, ID of the person who contributed the recipe, and nutritional information, including the fats, sugar, sodium, protein, saturated fat, and carbohydrates. The ratings dataset includes te columns, user_id, recipe_id, date, rating, and review. This represents the ID of the user who left the review, the recipe ID the user left the review for, the date, and the rating and review the reviewer left for the recipe. The dataframe for recipes has 83782 rows, which represents 83782 unique recipes. The dataframe for ratings has 731927 rows, which represents 731927 reviews.
 
-## Cleaning and EDA
+## Data Cleaning
 
 ### Merge Two Dataframes
 In our exploration of the data, we first merged the Recipes and Ratings datasets using a left merge on the recipe's ID. This ensures that all recipes from the Recipes dataset are retained.
@@ -28,6 +28,9 @@ extremely high calories
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
+## Exploratory Data Analysis
+## Univariate Analysis
+In the univariate analysis, we analyzed the distribution of calorie count in the recipes. We split the analysis into two graphs and created a distribution for recipes with calories greater than the recommended calorie intake of 2000 and a second one for recipes with calories less than or equal to the recommended calorie intake of 2000.
 <iframe src="assets/calorie_above.html" width=800 height=600 frameBorder=0></iframe>
 
 <iframe src="assets/calorie_above.html" width=800 height=600 frameBorder=0></iframe>
