@@ -1,7 +1,7 @@
 by Hillary Chang (hic001@ucsd.edu)
 
 ## Introduction
-In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of the calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. Our goal is to figure out if there's a clear connection between the nutrient levels and overall calorie content in recipes, and to see if certain nutrients stand out and have a strong association with the calorie count of a dish.
+In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of protein count and calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. Our specific aim is to investigate the existence of a correlation between protein and calorie content in recipes.
 
 Our dataset is curated from food.com and contains recipes and reviews. The data is separated into two datasets, the recipes dataset and ratings dataset. The recipes dataset contains columns like name, id, minutes, contributor_id, submitted tags, nutrition, n_steps, steps, description, ingredients, n_ingredients, representing the recipe name, recipe ID, the amount of recipes, ID of the person who contributed the recipe, and nutritional information, including the fats, sugar, sodium, protein, saturated fat, and carbohydrates. The ratings dataset includes te columns, user_id, recipe_id, date, rating, and review. This represents the ID of the user who left the review, the recipe ID the user left the review for, the date, and the rating and review the reviewer left for the recipe. The dataframe for recipes has 83782 rows, which represents 83782 unique recipes. The dataframe for ratings has 731927 rows, which represents 731927 reviews.
 
@@ -62,28 +62,34 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 
 ---
 ## Hypothesis Testing
-### Hypothesis Test Question: 
+Hypothesis Test Question: 
 Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
 
-### Null Hypothesis: 
-The nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes.
+### Setting Up the Testing
 
-### Alternative Hypothesis: 
-There is an association between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) and calorie count in recipes.
+```py
+print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
+```
 
-### Choice of Test Statistic: 
-I am using the mean difference in calorie content between recipes with nutrient levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the calorie content for high nutrient levels (nutrient level above mean nutrient level) and low nutrient levels (nutrient level equal to or below mean nutrient level).
+Null Hypothesis: 
+The protein level has no association with calorie count in recipes.
 
-### Significance Level: 
+Alternative Hypothesis: 
+There is an association between protein level and calorie count in recipes.
+
+Choice of Test Statistic: 
+I am using the mean difference in calorie content between recipes with protein levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the calorie content for high protein levels (protein level above mean protein level) and low protein levels (protein level equal to or below mean protein level). We define "high protein level" as the protein level above mean protein level, and "low protein level" as the protein level equal to or below mean protein level.
+
+Significance Level: 
 I have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
 
-### Resulting p-value: 
-The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
+
+### Permutation Testing
+
 
 ### Conclusion: 
-With a p-value of 0.0 for each permutation test for each nutrient level (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs), I have rejected the null hypothesis that the nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes. This p-value suggests that there is an association between nutrient levels (total_fat, sugar, sodium, protein, saturated_fat, carbs) and calorie content for the recipes.
+The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
 
-
-DESCRIPTION: Embed a visualization related to your hypothesis test in your website.
+With a p-value of 0.0 for the permutation test for protein, I have rejected the null hypothesis that the protein level has no association with calorie count in recipes. This p-value suggests that there is an association between the protein level and calorie content for the recipes.
 
 ---
