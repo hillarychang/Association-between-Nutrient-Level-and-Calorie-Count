@@ -2,13 +2,43 @@
 by Hillary Chang (hic001@ucsd.edu)
 
 ## Introduction
+In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of the calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. Our goal is to figure out if there's a clear connection between the nutrient levels and overall calorie content in recipes, and to see if certain nutrients stand out and have a strong association with the calorie count of a dish.
 
-In this project, we studied the which n of spice challenges in building team morale.
+Our dataset is curated from food.com and contains recipes and reviews. The data is separated into two datasets, the recipes dataset and ratings dataset. The recipes dataset contains columns like name, id, minutes, contributor_id, submitted tags, nutrition, n_steps, steps, description, ingredients, n_ingredients, representing the recipe name, recipe ID, the amount of recipes, ID of the person who contributed the recipe, and nutritional information, including the fats, sugar, sodium, protein, saturated fat, and carbohydrates. The ratings dataset includes te columns, user_id, recipe_id, date, rating, and review. This represents the ID of the user who left the review, the recipe ID the user left the review for, the date, and the rating and review the reviewer left for the recipe. The dataframe for recipes has 83782 rows, which represents 83782 unique recipes. The dataframe for ratings has 731927 rows, which represents 731927 reviews.
+
+## Cleaning and EDA
+
+# Merge Two Dataframes
+In our exploration of the data, we first merged the Recipes and Ratings datasets using a left merge on the recipe's ID. This ensures that all recipes from the Recipes dataset are retained.
+
+# Fill 0's with NaN Value
+We also filled all ratings of 0 in the merged dataset with np.nan because the presence of 0's affect the mean of a column in the dataset, and we wanted to preserve an accurate mean. 
+
+# Add Average Rating Column
+Afterwards, we computed the average rating per recipe by grouping the dataset by recipe ID and calculating the mean of the ratings for each group.
+
+# Convert Nutrition Column to List and Assign Individual Columns
+the was a string so we had to convert the 
+
+# Remove duplicate recipe entries 
+(there are duplicate recipes with different reviews)
+
+# Look at outliers 
+extremely high calories
+
+
+### **Transformations for Analysis:**
+To enhance our analytical endeavors, we've taken steps to ensure data quality. We've addressed ratings of 0 by replacing them with NaN, recognizing that zero ratings might not accurately reflect the sentiment of the users. This meticulous curation sets the stage for a more meaningful exploration of average ratings per recipe.
+
+
+
+
+
 Provide an introduction to your dataset, and clearly state the one question your analysis is centered around. Why should readers of your website care about the dataset and your question specifically? Report the number of rows in the dataset, the names of the columns that are relevant to your question, and descriptions of those relevant columns.
 
 ---
 
-## Cleaning and EDA
+## Data Cleaning and EDA
 
 Describe, in detail, the data cleaning steps you took and how they affected your analyses. The steps should be explained in reference to the data generating process. Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 
