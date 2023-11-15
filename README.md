@@ -1,4 +1,3 @@
-# Association-between-Nutrient-Level-and-Calorie-Count
 by Hillary Chang (hic001@ucsd.edu)
 
 ## Introduction
