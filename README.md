@@ -46,7 +46,7 @@ Significance Level: I have chosen a significance level of 0.05 for this analysis
 
 Resulting p-value: The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
 
-Conclusion: With a p-value of 0.0 for each permutation test for each nutrient level (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs), I have rejected the null hypothesis that the nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes. This p-value suggests that there is an association between nutrient levels (total_fat, sugar, sodium, protein, saturated_fat, carbs) and calorie content for the recipes, and recipes with higher nutrient levels tend to have higher calorie count.
+Conclusion: With a p-value of 0.0 for each permutation test for each nutrient level (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs), I have rejected the null hypothesis that the nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) have no association with calorie count in recipes. This p-value suggests that there is an association between nutrient levels (total_fat, sugar, sodium, protein, saturated_fat, carbs) and calorie content for the recipes.
 
 
 Embed a visualization related to your hypothesis test in your website.
