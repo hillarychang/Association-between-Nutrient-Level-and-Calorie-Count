@@ -33,7 +33,7 @@ Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 ## Exploratory Data Analysis
 ## Univariate Analysis
 In the univariate analysis, we analyzed the distribution of calorie count in the recipes. Because there were several recipes with extremely high calorie counts, we split the analysis into two graphs and created a distribution for recipes with calories greater than the recommended calorie intake of 2000 and a second one for recipes with calories less than or equal to the recommended calorie intake of 2000 to remove the outliers for each distribution.
-<iframe src="assets/calorie_above.html" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/calorie_below.html" width=800 height=600 frameBorder=0></iframe>
 This plot shows that the distribution of recipes with a calorie count from 0 to 2000 could be approximated as a right skewed gaussian distribution. The graph is centered around 200, meaning that most recipes below the recommended calorie intake of 2000 calories have around 200 calories.
 
 <iframe src="assets/calorie_above.html" width=800 height=600 frameBorder=0></iframe>
