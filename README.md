@@ -7,17 +7,19 @@ Our dataset is curated from food.com and contains recipes and reviews. The data 
 
 ## Data Cleaning
 
-### Merge Two Dataframes
-In our exploration of the data, we first merged the Recipes and Ratings datasets using a left merge on the recipe's ID. This ensures that all recipes from the Recipes dataset are retained.
+### Merging DataFrames:
+We created our DataFrame by performing a left merge on the ‘recipes’ and ‘interactions’ DataFrames on the ‘id’ and ‘recipe_id’ columns respectively. In doing so, we are able to see the information necessary to our data analysis on one DataFrame.
 
-### Fill 0's with NaN Value
-We also filled all ratings of 0 in the merged dataset with np.nan because the presence of 0's affect the mean of a column in the dataset, and we wanted to preserve an accurate mean. 
+### Fill 0's with NaN Value:
+After merging our data sets into one DataFrame, we filled all the 0 values in the ‘rating’ column with np.NaN. This was done in order to preserve accurate calculations for distribution statistics, such as the mean and median, as these functions will drop np.NaN when calculating. In this way, we can calculate accurate distribution statistics with values that count towards the total, rather than including values that would not contribute to the overall calculation.
 
-### Add Average Rating Column
-Afterwards, we computed the average rating per recipe by grouping the dataset by recipe ID and calculating the mean of the ratings for each group.
+### Add Average Rating Column:
+Next, we added an ‘avg_rating’ column to the DataFrame by creating a new DataFrame that consists of 1 column, indexed by the ‘name’ column of the original DataFrame. The values of this column were found by performing a groupby in the ‘name’ column of the original DataFrame and finding the mean. After making this auxiliary DataFrame, we then merged it with the original DataFrame with an inner join on the ‘name’ column of both. 
 
 ### Convert Nutrition Column to List and Assign Individual Columns
-the was a string so we had to convert the 
+The ‘nutrition’ column on the original DataFrame has important information regarding the caloric and nutrient content of each recipe. We felt that it was imperative to sort these individual values into their respective columns on the DataFrame. 
+
+First, we imported the ast package, which allowed us to utilize the literal_eval() function in order to convert the object data types of the column into Python lists that we can more easily access the individual values. Afterwards, we assigned the columns ‘calories,’ ‘total_fat,’ ‘sugar,’ ‘sodium,’ ‘protein,’ ‘saturated_fat,’ and ‘carbs’ with the values corresponding to each label from the ‘nutrition’ column. This was done through a simple indexing of the values of the ‘nutrition’ column.
 
 ### Remove duplicate recipe entries 
 (there are duplicate recipes with different reviews)
@@ -46,10 +48,9 @@ This plot shows that the distribution of recipes with a calorie count from 0 to 
 This plot shows that the distribution of recipes with a calorie count from 0 to 2000 could be approximated as a right skewed gaussian distribution. The graph is centered around 200, meaning that most recipes below the recommended calorie intake of 2000 calories have around 200 calories.
 
 ## Interesting Aggregates
-Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
-
-Embed at least one grouped table or pivot table in your website and explain its significance.
 pivot_table_recipe_type.sort_values(by='calories', ascending=False).to_markdown(index=False)
+
+Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
 
 ---
 ## Assessment of Missingness
