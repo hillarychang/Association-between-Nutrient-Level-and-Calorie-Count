@@ -47,10 +47,10 @@ This plot shows that the distribution of recipes with a calorie count from 2000 
 ## Bivariate Analysis
 In the bivariate analysis, we analyzed the distribution of calorie count in the recipes with the protein count. Because there were several recipes with extremely high calorie counts, we split the analysis into two graphs and created a distribution for recipes with calories greater than the recommended calorie intake of 2000 and a second one for recipes with calories less than or equal to the recommended calorie intake of 2000 to remove the outliers for each distribution.
 <iframe src="assets/bivariate" width=800 height=600 frameBorder=0></iframe>
-This plot shows that the distribution of recipes with a calorie count from 0 to 2000 could be approximated as a right skewed gaussian distribution. The graph is centered around 200, meaning that most recipes below the recommended calorie intake of 2000 calories have around 200 calories.
+This plot shows that there is a positive correlation between protein count and calorie count for recipes with a calorie count equal to or below 2000 calories. It is also interesting to note that recipes with a very high calorie count can have 0 grams of protein or very high counts of protein.
 
 <iframe src="assets/bivariate_above" width=800 height=600 frameBorder=0></iframe>
-This plot shows that the distribution of recipes with a calorie count from 0 to 2000 could be approximated as a right skewed gaussian distribution. The graph is centered around 200, meaning that most recipes below the recommended calorie intake of 2000 calories have around 200 calories.
+This plot also shows that there is a positive correlation between protein count and calorie count for recipes with a calorie count above 2000 calories. It is also interesting to note in this plot that recipes with a very high calorie count can have very low or very high counts of protein, as shown in the plot from the recipe with a count of 36,188 calories with 329 grams of protein, compared to the recipe with 45,609 calories with 4356 grams of protein.
 
 ## Interesting Aggregates
 pivot_table_recipe_type.sort_values(by='calories', ascending=False).to_markdown(index=False)
