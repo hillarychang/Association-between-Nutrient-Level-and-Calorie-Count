@@ -4,9 +4,10 @@ by Hillary Chang (hic001@ucsd.edu)
 In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of protein count and calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. Our specific aim is to investigate the existence of a correlation between protein and calorie content in recipes.
 
 Our dataset is curated from food.com and contains recipes and reviews. The data is separated into two datasets, the recipes dataset and ratings dataset. The recipes dataset contains columns like name, id, minutes, contributor_id, submitted tags, nutrition, n_steps, steps, description, ingredients, n_ingredients, representing the recipe name, recipe ID, the amount of recipes, ID of the person who contributed the recipe, and nutritional information, including the fats, sugar, sodium, protein, saturated fat, and carbohydrates. The ratings dataset includes te columns, user_id, recipe_id, date, rating, and review. This represents the ID of the user who left the review, the recipe ID the user left the review for, the date, and the rating and review the reviewer left for the recipe. The dataframe for recipes has 83782 rows, which represents 83782 unique recipes. The dataframe for ratings has 731927 rows, which represents 731927 reviews.
+---
+
 
 ## Data Cleaning
-
 ### Merging DataFrames:
 We created our DataFrame by performing a left merge on the ‘recipes’ and ‘interactions’ DataFrames on the ‘id’ and ‘recipe_id’ columns respectively. In doing so, we are able to see the information necessary to our data analysis on one DataFrame.
 
@@ -29,6 +30,8 @@ extremely high calories
 
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
+---
+
 
 ## Exploratory Data Analysis
 ## Univariate Analysis
@@ -51,8 +54,10 @@ This plot shows that the distribution of recipes with a calorie count from 0 to 
 pivot_table_recipe_type.sort_values(by='calories', ascending=False).to_markdown(index=False)
 
 Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
-
 ---
+
+
+
 ## Assessment of Missingness
 
 Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
@@ -62,6 +67,8 @@ print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
 ```
 
 ---
+
+
 ## Hypothesis Testing
 Hypothesis Test Question: 
 Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
