@@ -62,12 +62,39 @@ Include a 1-2 sentence explanation about your plot, making sure to describe and 
 
 
 ## Assessment of Missingness
+State whether you believe there is a column in your dataset that is NMAR. Explain your reasoning and any additional data you might want to obtain that could explain the missingness (thereby making it MAR). Make sure to explicitly use the term “NMAR.”
+Present and interpret the results of your missingness permutation tests with respect to your data and question. Embed a plotly plot related to your missingness exploration; ideas include:
+The distribution of column Y when column X is missing
+the distribution of column Y when column X is NOT missing
+The empirical distribution of the test statistic used in one of your permutation tests, along with the observed statistic.
+	
+### NMAR Analysis
+A column of our DataFrame that we believe to be NMAR is the ‘rating’ column. Someone is more likely to rate a recipe if they believe that it is either extremely good (5.0) or extremely bad (0.0), resulting in more neutral ratings not being recorded. Thus, reviewers fail to report ratings for recipes they believe are average.
 
-Here's what a Markdown table looks like. Note that the code for this table was generated _automatically_ from a DataFrame, using
+### Missingness Dependency
+The column of missingness that we will be analyzing is the ‘review’ column. To test our hypothesis, we performed a repeated TVD test on ‘review’ and the columns of ’contributer_id,’ ‘rating,’ and ‘n_steps’ of the original DataFrame.
 
-```py
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
-```
+### ‘Contributor_id’ and ‘review’
+Null hypothesis: the distribution of ‘contributor_id’ when ‘review’ is missing is the same as the distribution of the ‘contributor_id’ when ‘review’ is not missing 
+
+Alternative hypothesis: the distribution of ‘contributor_id’ when ‘review’ is missing is different from the distribution of ‘contributor_id’ when ‘review’ is not missing 
+
+Observed Statistics: The total variation distance (TVD) between these two distributions.
+
+To perform this experiment, we used permutation testing to shuffle the missingness of ‘contributor_id’ 500 times and get 500 experimental TVDs to compare against the observed TVD. 
+
+Conclusion: From this experiment, we calculated the p-value to be 0.006. When using a significance threshold of 0.05, since 0.006 < 0.05, we reject the null hypothesis that ‘review’ is not dependent on ‘contributor_id.’ Based on our test result, we can see that the missingness of the ‘review’ is MAR because the missingness of ‘review’ is dependent on ‘contributor_id.’ This is likely due to the fact that someone who has left a review on a single recipe is more likely to leave more reviews on other recipes. 
+
+### ‘N_steps’ and ‘review’ 
+Null hypothesis: the distribution of ‘n_steps’ when ‘review’ is missing is the same as the distribution of the ‘n_steps’ when ‘review’ is not missing 
+
+Alternative hypothesis: the distribution of ‘n_steps’ when ‘review’ is missing is different from the distribution of ‘n_steps’ when ‘review’ is not missing. 
+
+Observed Statistics: The total variation distance (TVD) between these two distributions.
+
+To perform this experiment, we used permutation testing to shuffle the missingness of ‘n_steps’ 500 times and get 500 experimental TVDs to compare against the observed TVD. 
+
+Conclusion: From this experiment, we calculated the p-value to be 0.156. When using a significance threshold of 0.05, since 0.156 > 0.05, we fail to reject the null hypothesis that ‘review’ is not dependent on ‘n_steps.’ Based on our test result, we can see that the missingness of the ‘review’ is MCAR because the missingness of ‘review’ is not dependent on ‘n_steps.’ 
 
 ---
 
