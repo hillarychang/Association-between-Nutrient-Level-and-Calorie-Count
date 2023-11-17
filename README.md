@@ -30,7 +30,6 @@ Next, we noticed that there were duplicate recipe names in the ‘name’ column
 Throughout our analysis of the data, we noticed that some of the calorie counts were extremely high (ie. 40000). We decided to exclude these outliers due to the fact that most diets range from 0-2000 calories a day, making anything above that range unrealistic.
 
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
-Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 | name                                 | id      | rating | calories | protein |
 |--------------------------------------|---------|--------|----------|---------|
 | 0 carb 0 cal gummy worms             | 283618.0| 4.75   | 384.7    | 159.0   |
