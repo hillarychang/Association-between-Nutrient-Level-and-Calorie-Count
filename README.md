@@ -73,6 +73,8 @@ This plot also shows that there is a positive correlation between protein count 
 | 7.500      | 54.400     |
 | 0.500      | 53.425     |
 
+This is the pivot table for the ```calories``` and ```protein```
+
 ---
 
 
