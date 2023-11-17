@@ -1,4 +1,3 @@
-# Association between Protein and Calorie Count
 by Hillary Chang (hic001@ucsd.edu) and Paige Pagaduan (ppagaduan@ucsd.edu)
 
 ## Introduction
