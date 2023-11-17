@@ -146,7 +146,7 @@ We only selected useful columns, including ```protein```, ```calories```, and cr
 | 0 point soup crock pot              | False           | 4.0     | 40.7     |
 | 007 martini                         | False           | 0.0     | 146.5    |
 
-We are using the mean difference in calorie content between recipes with protein levels above and below their mean thresholds as the test statistic. Because calorie count is numerical data, it is appropriate to use the difference in mean as our test statistics. We are interested in comparing the calorie content for high protein levels (protein level above mean protein level) and low protein levels (protein level equal to or below mean protein level). We define "high protein level" as the protein level above mean protein level, and "low protein level" as the protein level equal to or below mean protein level.
+We are using the mean difference in calorie content between recipes with protein levels above and below their mean thresholds as the test statistic. Because calorie count is numerical data, it is appropriate to use the difference in means as our test statistics. We are interested in comparing the calorie content for high protein levels (protein level above mean protein level) and low protein levels (protein level equal to or below mean protein level). We define "high protein level" as the protein level above mean protein level, and "low protein level" as the protein level equal to or below mean protein level.
 
 We have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
 
@@ -155,7 +155,7 @@ We have chosen a significance level of 0.05 for this analysis. This is because a
 | False            | 11.140109  | 273.151118 |
 | True             | 73.587422  | 718.447829 |
 
-The observed difference in mean is 445.29.
+The observed difference in means is 445.29.
 
 ### Permutation Testing
 <iframe src="assets/protein-calorie" width=800 height=600 frameBorder=0></iframe>
