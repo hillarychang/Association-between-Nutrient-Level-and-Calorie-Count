@@ -164,6 +164,6 @@ The observed difference in means is 445.29.
 ### Conclusion: 
 The resulting p-value based on the observed difference and the distribution of differences obtained through permutation testing is 0.0.
 
-With a p-value of 0.0 for the permutation test for protein, we reject the null hypothesis that the protein level has no association with calorie count in recipes. This p-value suggests that there is an association between the protein level and calorie content for the recipes.
+With a p-value of 0.0 for the permutation test for protein, we reject the null hypothesis that the protein level has no association with calorie count in recipes given that we set our significance level at 0.05. This p-value suggests that there is an association between the protein level and calorie content for the recipes.
 
 ---
