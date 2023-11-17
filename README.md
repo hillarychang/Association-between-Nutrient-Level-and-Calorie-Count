@@ -24,13 +24,16 @@ The ‘nutrition’ column on the original DataFrame has important information r
 First, we imported the ast package, which allowed us to utilize the literal_eval() function in order to convert the object data types of the column into Python lists that we can more easily access the individual values. Afterwards, we assigned the columns ‘calories,’ ‘total_fat,’ ‘sugar,’ ‘sodium,’ ‘protein,’ ‘saturated_fat,’ and ‘carbs’ with the values corresponding to each label from the ‘nutrition’ column. This was done through a simple indexing of the values of the ‘nutrition’ column.
 
 ### Remove duplicate recipe entries 
-(there are duplicate recipes with different reviews)
+Next, we noticed that there were duplicate recipe names in the ‘name’ column. To manage this, we used a simple groupby on the ‘name’ column in order to group each value by the name of the recipe. 
 
 ### Look at outliers 
-extremely high calories
+Throughout our analysis of the data, we noticed that some of the calorie counts were extremely high (ie. 40000). We decided to exclude these outliers due to the fact that most diets range from 0-2000 calories a day, making anything above that range unrealistic.
 
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
+```py
+print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
+```
 
 ---
 
