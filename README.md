@@ -59,6 +59,8 @@ This plot shows that there is a positive correlation between protein count and c
 This plot also shows that there is a positive correlation between protein count and calorie count for recipes with a calorie count above 2000 calories. It is also interesting to note in this plot that recipes with a very high calorie count can have very low or very high counts of protein, as shown in the plot from the recipe with a count of 36,188 calories with 329 grams of protein, compared to the recipe with 45,609 calories with 4356 grams of protein.
 
 ## Interesting Aggregates
+In the aggregates analysis, we studied the calorie and protein count. We looked at the mean for each, and noticed recipes with high counts of protein tend to have high counts of calories, whereas recipes with low counts of protein tend to have low counts of calories
+
 | calories   | protein    |
 |------------|------------|
 | 4356.000   | 45609.000  |
