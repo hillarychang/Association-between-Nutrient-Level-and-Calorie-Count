@@ -32,7 +32,7 @@ Throughout our analysis of the data, we noticed that some of the calorie counts 
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
 ```py
-df_section1[['name', 'id', 'calories','protein']].head().to_markdown(index=False))
+print(df_section1[['name', 'id', 'calories','protein']].head().to_markdown(index=False)))
 ```
 
 ---
