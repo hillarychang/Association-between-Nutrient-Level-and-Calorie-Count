@@ -3,28 +3,28 @@ by Hillary Chang (hic001@ucsd.edu) and Paige Pagaduan (ppagaduan@ucsd.edu)
 ## Introduction
 In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of protein count and calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. Our specific aim is to investigate the existence of a correlation between protein and calorie content in recipes.
 
-Our dataset is curated from food.com and contains recipes and reviews. The data is separated into two datasets, the recipes dataset and ratings dataset. The recipes dataset contains columns like name, id, minutes, contributor_id, submitted tags, nutrition, n_steps, steps, description, ingredients, n_ingredients, representing the recipe name, recipe ID, the amount of recipes, ID of the person who contributed the recipe, and nutritional information, including the fats, sugar, sodium, protein, saturated fat, and carbohydrates. The ratings dataset includes te columns, user_id, recipe_id, date, rating, and review. This represents the ID of the user who left the review, the recipe ID the user left the review for, the date, and the rating and review the reviewer left for the recipe. The dataframe for recipes has 83782 rows, which represents 83782 unique recipes. The dataframe for ratings has 731927 rows, which represents 731927 reviews.
+Our dataset is curated from food.com and contains recipes and reviews. The data is separated into two datasets, the recipes dataset and ratings dataset. The recipes dataset contains columns like ```name```, ```id```, ```minutes```, ```contributor_id```, ```submitted tags```, ```nutrition```, ```n_steps```, ```steps```, ```description```, ```ingredients```, ```n_ingredients```, representing the recipe name, recipe ID, the amount of recipes, ID of the person who contributed the recipe, and nutritional information, including the fats, sugar, sodium, protein, saturated fat, and carbohydrates. The ratings dataset includes te columns, user_id, recipe_id, date, rating, and review. This represents the ID of the user who left the review, the recipe ID the user left the review for, the date, and the rating and review the reviewer left for the recipe. The dataframe for recipes has 83782 rows, which represents 83782 unique recipes. The dataframe for ratings has 731927 rows, which represents 731927 reviews.
 
 ---
 
 
 ## Data Cleaning
 ### Merging DataFrames:
-We created our DataFrame by performing a left merge on the ‘recipes’ and ‘interactions’ DataFrames on the ‘id’ and ‘recipe_id’ columns respectively. In doing so, we are able to see the information necessary to our data analysis on one DataFrame.
+We created our DataFrame by performing a left merge on the ‘recipes’ and ‘interactions’ DataFrames on the ```id``` and ```recipe_id``` columns respectively. In doing so, we are able to see the information necessary to our data analysis on one DataFrame.
 
 ### Fill 0's with NaN Value:
-After merging our data sets into one DataFrame, we filled all the 0 values in the ‘rating’ column with np.NaN. This was done in order to preserve accurate calculations for distribution statistics, such as the mean and median, as these functions will drop np.NaN when calculating. In this way, we can calculate accurate distribution statistics with values that count towards the total, rather than including values that would not contribute to the overall calculation.
+After merging our data sets into one DataFrame, we filled all the 0 values in the ```rating``` column with np.NaN. This was done in order to preserve accurate calculations for distribution statistics, such as the mean and median, as these functions will drop np.NaN when calculating. In this way, we can calculate accurate distribution statistics with values that count towards the total, rather than including values that would not contribute to the overall calculation.
 
 ### Add Average Rating Column:
-Next, we added an ‘avg_rating’ column to the DataFrame by creating a new DataFrame that consists of 1 column, indexed by the ‘name’ column of the original DataFrame. The values of this column were found by performing a groupby in the ‘name’ column of the original DataFrame and finding the mean. After making this auxiliary DataFrame, we then merged it with the original DataFrame with an inner join on the ‘name’ column of both. 
+Next, we added an ```avg_rating``` column to the DataFrame by creating a new DataFrame that consists of 1 column, indexed by the ```name``` column of the original DataFrame. The values of this column were found by performing a groupby in the ```name``` column of the original DataFrame and finding the mean. After making this auxiliary DataFrame, we then merged it with the original DataFrame with an inner join on the ```name``` column of both. 
 
 ### Convert Nutrition Column to List and Assign Individual Columns
-The ‘nutrition’ column on the original DataFrame has important information regarding the caloric and nutrient content of each recipe. We felt that it was imperative to sort these individual values into their respective columns on the DataFrame. 
+The ```nutrition``` column on the original DataFrame has important information regarding the caloric and nutrient content of each recipe. We felt that it was imperative to sort these individual values into their respective columns on the DataFrame. 
 
-First, we imported the ast package, which allowed us to utilize the literal_eval() function in order to convert the object data types of the column into Python lists that we can more easily access the individual values. Afterwards, we assigned the columns ‘calories,’ ‘total_fat,’ ‘sugar,’ ‘sodium,’ ‘protein,’ ‘saturated_fat,’ and ‘carbs’ with the values corresponding to each label from the ‘nutrition’ column. This was done through a simple indexing of the values of the ‘nutrition’ column.
+First, we imported the ast package, which allowed us to utilize the literal_eval() function in order to convert the object data types of the column into Python lists that we can more easily access the individual values. Afterwards, we assigned the columns ```calories```, ```total_fat```, ```sugar```, ```sodium```, ```protein```, ```saturated_fat```, and ```carbs``` with the values corresponding to each label from the ```nutrition``` column. This was done through a simple indexing of the values of the ```nutrition``` column.
 
 ### Remove duplicate recipe entries 
-Next, we noticed that there were duplicate recipe names in the ‘name’ column. To manage this, we used a simple groupby on the ‘name’ column in order to group each value by the name of the recipe. 
+Next, we noticed that there were duplicate recipe names in the ```name``` column. To manage this, we used a simple groupby on the ```name``` column in order to group each value by the name of the recipe. 
 
 ### Look at outliers 
 Throughout our analysis of the data, we noticed that some of the calorie counts were extremely high (ie. 40000). We decided to exclude these outliers due to the fact that most diets range from 0-2000 calories a day, making anything above that range unrealistic.
@@ -90,15 +90,15 @@ the distribution of column Y when column X is NOT missing
 The empirical distribution of the test statistic used in one of your permutation tests, along with the observed statistic.
 	
 ### NMAR Analysis
-A column of our DataFrame that we believe to be NMAR is the ‘rating’ column. Someone is more likely to rate a recipe if they believe that it is either extremely good (5.0) or extremely bad (0.0), resulting in more neutral ratings not being recorded. Thus, reviewers fail to report ratings for recipes they believe are average.
+A column of our DataFrame that we believe to be NMAR is the ```rating``` column. Someone is more likely to rate a recipe if they believe that it is either extremely good (5.0) or extremely bad (0.0), resulting in more neutral ratings not being recorded. Thus, reviewers fail to report ratings for recipes they believe are average.
 
 ### Missingness Dependency
-The column of missingness that we will be analyzing is the ‘review’ column. To test our hypothesis, we performed a repeated TVD test on ‘review’ and the columns of ’contributer_id,’ ‘rating,’ and ‘n_steps’ of the original DataFrame.
+The column of missingness that we will be analyzing is the ```review``` column. To test our hypothesis, we performed a repeated TVD test on ‘review’ and the columns of ```contributer_id```, ```rating```, and ```n_steps``` of the original DataFrame.
 
 ### ‘Contributor_id’ and ‘review’
-Null hypothesis: the distribution of ‘contributor_id’ when ‘review’ is missing is the same as the distribution of the ‘contributor_id’ when ‘review’ is not missing 
+Null hypothesis: the distribution of ```contributor_id``` when ```review``` is missing is the same as the distribution of the ```contributor_id``` when ```review``` is not missing 
 
-Alternative hypothesis: the distribution of ‘contributor_id’ when ‘review’ is missing is different from the distribution of ‘contributor_id’ when ‘review’ is not missing 
+Alternative hypothesis: the distribution of ```contributor_id``` when ```review``` is missing is different from the distribution of ```contributor_id``` when ```review``` is not missing 
 
 Observed Statistics: The total variation distance (TVD) between these two distributions.
 
@@ -119,14 +119,14 @@ To perform this experiment, we used permutation testing to shuffle the missingne
 
 <iframe src="assets/review_n_steps" width=800 height=600 frameBorder=0></iframe>
 
-Conclusion: From this experiment, we calculated the p-value to be 0.156. When using a significance threshold of 0.05, since 0.156 > 0.05, we fail to reject the null hypothesis that ‘review’ is not dependent on ‘n_steps.’ Based on our test result, we can see that the missingness of the ‘review’ is MCAR because the missingness of ‘review’ is not dependent on ‘n_steps.’ 
+Conclusion: From this experiment, we calculated the p-value to be 0.156. When using a significance threshold of 0.05, since 0.156 > 0.05, we fail to reject the null hypothesis that ```review``` is not dependent on ```n_steps```. Based on our test result, we can see that the missingness of the ```review``` is MCAR because the missingness of ```review``` is not dependent on ```n_steps```.
 
 ---
 
 
 ## Hypothesis Testing
 Hypothesis Test Question: 
-Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
+Is there a significant relationship between protein level in recipes and their calorie counts?
 
 ### Setting Up the Testing
 Null Hypothesis: 
@@ -135,7 +135,7 @@ The protein level has no association with calorie count in recipes.
 Alternative Hypothesis: 
 There is an association between protein level and calorie count in recipes.
 
-We only selected useful columns, including protein, calories, and created a new column named above_threshold, which is True for protein counts above the mean protein level of 33.13 grams and False if the protein count is below or equal to the mean protein level of 33.13 grams.
+We only selected useful columns, including ```protein```, ```calories```, and created a new column named ```above_threshold```, which is True for protein counts above the mean protein level of 33.13 grams and False if the protein count is below or equal to the mean protein level of 33.13 grams.
 
 | name                                | above_threshold | protein | calories |
 |-------------------------------------|-----------------|---------|----------|
