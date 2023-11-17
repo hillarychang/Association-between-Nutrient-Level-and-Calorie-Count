@@ -56,9 +56,10 @@ This plot shows that there is a positive correlation between protein count and c
 This plot also shows that there is a positive correlation between protein count and calorie count for recipes with a calorie count above 2000 calories. It is also interesting to note in this plot that recipes with a very high calorie count can have very low or very high counts of protein, as shown in the plot from the recipe with a count of 36,188 calories with 329 grams of protein, compared to the recipe with 45,609 calories with 4356 grams of protein.
 
 ## Interesting Aggregates
+```py
 pivot_table_recipe_type.sort_values(by='calories', ascending=False).to_markdown(index=False)
-
-Include a 1-2 sentence explanation about your plot, making sure to describe and interpret any trends present. (Your notebook will likely have more visualizations than your website, and that’s fine. Feel free to embed more than one bivariate visualization in your website if you’d like, but make sure that each embedded plot is accompanied by a description.)
+```
+FILL THIS PART
 
 ---
 
@@ -86,7 +87,7 @@ Observed Statistics: The total variation distance (TVD) between these two distri
 
 To perform this experiment, we used permutation testing to shuffle the missingness of ‘contributor_id’ 500 times and get 500 experimental TVDs to compare against the observed TVD. 
 
-<iframe src="assets/review_contributer_id" width=800 height=600 frameBorder=0></iframe>
+<iframe src="assets/review_contributor_id" width=800 height=600 frameBorder=0></iframe>
 
 Conclusion: From this experiment, we calculated the p-value to be 0.006. When using a significance threshold of 0.05, since 0.006 < 0.05, we reject the null hypothesis that ‘review’ is not dependent on ‘contributor_id.’ Based on our test result, we can see that the missingness of the ‘review’ is MAR because the missingness of ‘review’ is dependent on ‘contributor_id.’ This is likely due to the fact that someone who has left a review on a single recipe is more likely to leave more reviews on other recipes. 
 
