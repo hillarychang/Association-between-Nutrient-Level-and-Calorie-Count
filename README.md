@@ -31,9 +31,19 @@ Throughout our analysis of the data, we noticed that some of the calorie counts 
 
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
-```py
-print(df_section1[['name', 'id', 'calories','protein']].head().to_markdown(index=False)))
-```
+| id      | rating   | calories  | protein  |
+|---------|----------|-----------|----------|
+| 283618.0 | 4.750000 | 384.7     | 159.0    |
+| 480558.0 | 5.000000 | 304.1     | 13.0     |
+| 391705.0 | 4.777778 | 26.8      | 2.0      |
+| 416980.0 | 5.000000 | 40.7      | 4.0      |
+| 429524.0 | 5.000000 | 146.5     | 0.0      |
+| ...     | ...      | ...       | ...      |
+| 367912.0 | 5.000000 | 14.1      | 1.0      |
+| 357451.0 | 5.000000 | 239.9     | 1.0      |
+| 486161.0 | 5.000000 | 415.2     | 44.0     |
+| 493372.0 | 5.000000 | 14.8      | 1.0      |
+| 308080.0 | 5.000000 | 59.2      | 6.0      |
 
 ---
 
@@ -56,10 +66,19 @@ This plot shows that there is a positive correlation between protein count and c
 This plot also shows that there is a positive correlation between protein count and calorie count for recipes with a calorie count above 2000 calories. It is also interesting to note in this plot that recipes with a very high calorie count can have very low or very high counts of protein, as shown in the plot from the recipe with a count of 36,188 calories with 329 grams of protein, compared to the recipe with 45,609 calories with 4356 grams of protein.
 
 ## Interesting Aggregates
-```py
-pivot_table_recipe_type.sort_values(by='calories', ascending=False).to_markdown(index=False)
-```
-FILL THIS PART
+| calories   | protein    |
+|------------|------------|
+| 4356.000   | 45609.000  |
+| 360.000    | 28930.200  |
+| 446.000    | 26604.400  |
+| 3605.000   | 21497.800  |
+| 329.000    | 18927.250  |
+| ...        | ...        |
+| 1.250      | 91.925     |
+| 7.250      | 87.775     |
+| 0.035714   | 82.625     |
+| 7.500      | 54.400     |
+| 0.500      | 53.425     |
 
 ---
 
@@ -113,9 +132,19 @@ Is there a significant relationship between nutrient levels (calories, total_fat
 
 ### Setting Up the Testing
 
-```py
-print(counts[['Quarter', 'Count']].head().to_markdown(index=False))
-```
+| name                                      | above_threshold | protein | calories | shuffled_calories |
+|-------------------------------------------|-----------------|---------|----------|-------------------|
+| 1 brownies in the world best ever          | False           | 3.0     | 138.4    | 347.4             |
+| 1 in canada chocolate chip cookies         | False           | 13.0    | 595.1    | 238.9             |
+| 412 broccoli casserole                    | False           | 22.0    | 194.8    | 43.3              |
+| 412 broccoli casserole                    | False           | 22.0    | 194.8    | 99.3              |
+| 412 broccoli casserole                    | False           | 22.0    | 194.8    | 392.0             |
+| ...                                       | ...             | ...     | ...      | ...               |
+| zydeco ya ya deviled eggs                 | False           | 6.0     | 59.2     | 628.4             |
+| cookies by design cookies on a stick       | False           | 7.0     | 188.0    | 478.9             |
+| cookies by design sugar shortbread cookies | False           | 4.0     | 174.9    | 735.5             |
+| cookies by design sugar shortbread cookies | False           | 4.0     | 174.9    | 311.9             |
+| cookies by design sugar shortbread cookies | False           | 4.0     | 174.9    | 757.5             |
 
 Null Hypothesis: 
 The protein level has no association with calorie count in recipes.
