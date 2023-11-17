@@ -1,4 +1,4 @@
-by Hillary Chang (hic001@ucsd.edu)
+by Hillary Chang (hic001@ucsd.edu) and Paige Pagaduan (ppagaduan@ucsd.edu)
 
 ## Introduction
 In an era where mindful eating and wellness are in the spotlight, there's a growing emphasis on understanding the nutritional content of our meals. The calorie count of a recipe isn't just a number—it has evolved into a crucial piece of information, guiding individuals to make informed decisions about their dietary choices. For athletes, health enthusiasts, and even individuals living a normal lifestyle, having awareness of protein count and calorie content in recipes is essential for weight management, reaching fitness objectives, and fostering mindful decision-making. Our specific aim is to investigate the existence of a correlation between protein and calorie content in recipes.
@@ -83,6 +83,8 @@ Observed Statistics: The total variation distance (TVD) between these two distri
 
 To perform this experiment, we used permutation testing to shuffle the missingness of ‘contributor_id’ 500 times and get 500 experimental TVDs to compare against the observed TVD. 
 
+<iframe src="assets/review_contributer_id" width=800 height=600 frameBorder=0></iframe>
+
 Conclusion: From this experiment, we calculated the p-value to be 0.006. When using a significance threshold of 0.05, since 0.006 < 0.05, we reject the null hypothesis that ‘review’ is not dependent on ‘contributor_id.’ Based on our test result, we can see that the missingness of the ‘review’ is MAR because the missingness of ‘review’ is dependent on ‘contributor_id.’ This is likely due to the fact that someone who has left a review on a single recipe is more likely to leave more reviews on other recipes. 
 
 ### ‘N_steps’ and ‘review’ 
@@ -93,6 +95,8 @@ Alternative hypothesis: the distribution of ‘n_steps’ when ‘review’ is m
 Observed Statistics: The total variation distance (TVD) between these two distributions.
 
 To perform this experiment, we used permutation testing to shuffle the missingness of ‘n_steps’ 500 times and get 500 experimental TVDs to compare against the observed TVD. 
+
+<iframe src="assets/review_n_steps" width=800 height=600 frameBorder=0></iframe>
 
 Conclusion: From this experiment, we calculated the p-value to be 0.156. When using a significance threshold of 0.05, since 0.156 > 0.05, we fail to reject the null hypothesis that ‘review’ is not dependent on ‘n_steps.’ Based on our test result, we can see that the missingness of the ‘review’ is MCAR because the missingness of ‘review’ is not dependent on ‘n_steps.’ 
 
