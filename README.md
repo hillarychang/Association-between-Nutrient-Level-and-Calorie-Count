@@ -125,33 +125,32 @@ Hypothesis Test Question:
 Is there a significant relationship between nutrient levels (calories, total_fat, sugar, sodium, protein, saturated_fat, and carbs) in recipes and their calorie counts?
 
 ### Setting Up the Testing
-
-| name                                      | above_threshold | protein | calories | shuffled_calories |
-|-------------------------------------------|-----------------|---------|----------|-------------------|
-| 1 brownies in the world best ever          | False           | 3.0     | 138.4    | 347.4             |
-| 1 in canada chocolate chip cookies         | False           | 13.0    | 595.1    | 238.9             |
-| 412 broccoli casserole                    | False           | 22.0    | 194.8    | 43.3              |
-| 412 broccoli casserole                    | False           | 22.0    | 194.8    | 99.3              |
-| 412 broccoli casserole                    | False           | 22.0    | 194.8    | 392.0             |
-| ...                                       | ...             | ...     | ...      | ...               |
-| zydeco ya ya deviled eggs                 | False           | 6.0     | 59.2     | 628.4             |
-| cookies by design cookies on a stick       | False           | 7.0     | 188.0    | 478.9             |
-| cookies by design sugar shortbread cookies | False           | 4.0     | 174.9    | 735.5             |
-| cookies by design sugar shortbread cookies | False           | 4.0     | 174.9    | 311.9             |
-| cookies by design sugar shortbread cookies | False           | 4.0     | 174.9    | 757.5             |
-
 Null Hypothesis: 
 The protein level has no association with calorie count in recipes.
 
 Alternative Hypothesis: 
 There is an association between protein level and calorie count in recipes.
 
-Choice of Test Statistic: 
-I am using the mean difference in calorie content between recipes with protein levels above and below their mean thresholds as the test statistic. Using the mean difference as the test statistic is appropriate because I am interested in comparing the calorie content for high protein levels (protein level above mean protein level) and low protein levels (protein level equal to or below mean protein level). We define "high protein level" as the protein level above mean protein level, and "low protein level" as the protein level equal to or below mean protein level.
+We only selected useful columns, including protein, calories, and created a new column named above_threshold, which is True for protein counts above the mean protein level of 33.13 grams and False if the protein count is below or equal to the mean protein level of 33.13 grams.
 
-Significance Level: 
-I have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
+| name                                | above_threshold | protein | calories |
+|-------------------------------------|-----------------|---------|----------|
+| 0 carb 0 cal gummy worms            | True            | 159.0   | 384.7    |
+| 0 point ice cream only 1 ingredient | False           | 13.0    | 304.1    |
+| 0 point soup ww                     | False           | 2.0     | 26.8     |
+| 0 point soup crock pot              | False           | 4.0     | 40.7     |
+| 007 martini                         | False           | 0.0     | 146.5    |
 
+We are using the mean difference in calorie content between recipes with protein levels above and below their mean thresholds as the test statistic. Because calorie count is numerical data, it is appropriate to use the difference in mean as our test statistics. We are interested in comparing the calorie content for high protein levels (protein level above mean protein level) and low protein levels (protein level equal to or below mean protein level). We define "high protein level" as the protein level above mean protein level, and "low protein level" as the protein level equal to or below mean protein level.
+
+We have chosen a significance level of 0.05 for this analysis. This is because a significance level of 0.05 is commonly used to represent the threshold for considering results statistically significant.
+
+| above_threshold | protein    | calories   |
+|------------------|------------|------------|
+| False            | 11.140109  | 273.151118 |
+| True             | 73.587422  | 718.447829 |
+
+The observed difference in mean is 445.29.
 
 ### Permutation Testing
 <iframe src="assets/protein-calorie" width=800 height=600 frameBorder=0></iframe>
