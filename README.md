@@ -31,19 +31,13 @@ Throughout our analysis of the data, we noticed that some of the calorie counts 
 
 ### The first few 5 rows of our cleaned and merged dataframe is shown below (with only important columns selected for display).
 Show the head of your cleaned DataFrame (see Part 2: Report for instructions).
-| id      | rating   | calories  | protein  |
-|---------|----------|-----------|----------|
-| 283618.0 | 4.750000 | 384.7     | 159.0    |
-| 480558.0 | 5.000000 | 304.1     | 13.0     |
-| 391705.0 | 4.777778 | 26.8      | 2.0      |
-| 416980.0 | 5.000000 | 40.7      | 4.0      |
-| 429524.0 | 5.000000 | 146.5     | 0.0      |
-| ...     | ...      | ...       | ...      |
-| 367912.0 | 5.000000 | 14.1      | 1.0      |
-| 357451.0 | 5.000000 | 239.9     | 1.0      |
-| 486161.0 | 5.000000 | 415.2     | 44.0     |
-| 493372.0 | 5.000000 | 14.8      | 1.0      |
-| 308080.0 | 5.000000 | 59.2      | 6.0      |
+| name                                 | id      | rating | calories | protein |
+|--------------------------------------|---------|--------|----------|---------|
+| 0 carb 0 cal gummy worms             | 283618.0| 4.75   | 384.7    | 159.0   |
+| 0 point ice cream only 1 ingredient  | 480558.0| 5.0    | 304.1    | 13.0    |
+| 0 point soup ww                      | 391705.0| 4.78   | 26.8     | 2.0     |
+| 0 point soup crock pot               | 416980.0| 5.0    | 40.7     | 4.0     |
+| 007 martini                          | 429524.0| 5.0    | 146.5    | 0.0     |
 
 ---
 
