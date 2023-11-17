@@ -61,19 +61,19 @@ This plot also shows that there is a positive correlation between protein count 
 ## Interesting Aggregates
 In the aggregates analysis, we studied the calorie and protein count. We looked at the mean for each, and noticed recipes with high counts of protein tend to have high counts of calories, whereas recipes with low counts of protein tend to have low counts of calories
 
-| calories   | protein    |
-|------------|------------|
-| 4356.000   | 45609.000  |
-| 360.000    | 28930.200  |
-| 446.000    | 26604.400  |
-| 3605.000   | 21497.800  |
-| 329.000    | 18927.250  |
-| ...        | ...        |
-| 1.250      | 91.925     |
-| 7.250      | 87.775     |
-| 0.035714   | 82.625     |
-| 7.500      | 54.400     |
-| 0.500      | 53.425     |
+| mean calories | mean protein |
+|---------------|--------------|
+| 4356.000      | 45609.000    |
+| 360.000       | 28930.200    |
+| 446.000       | 26604.400    |
+| 3605.000      | 21497.800    |
+| 329.000       | 18927.250    |
+| ...           | ...          |
+| 1.250         | 91.925       |
+| 7.250         | 87.775       |
+| 0.035714      | 82.625       |
+| 7.500         | 54.400       |
+| 0.500         | 53.425       |
 
 This is the pivot table for the ```calories``` and ```protein```
 
